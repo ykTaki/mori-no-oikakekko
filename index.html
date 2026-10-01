@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#245342">
+  <meta name="description" content="お猿さんとタヌキさんの、のんびり仲良し鬼ごっこ。パソコンでもスマートフォンでも遊べる無料のゲームです。">
+  <title>もりの おいかけっこ ― お猿さんとタヌキさん</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="engine.js"></script>
+  <script defer src="game.js"></script>
+</head>
+<body>
+  <header class="site-header"><a class="brand" href="./"><span class="brand-leaf">❧</span> こもれび ゲームズ</a><span class="header-note">ちいさな森の、なかよし時間。</span><button id="sound" class="quiet" aria-pressed="false">♪ 音：オフ</button></header>
+  <main>
+    <section class="intro"><div><p class="eyebrow">FOREST FRIENDS · 01</p><h1>もりの <span>おいかけっこ</span><i aria-hidden="true">✦</i></h1><p class="subtitle">「まてまて〜！」 きょうも森は、ふたりの笑い声でいっぱい。</p></div><span class="tag">ひとりで遊べる <b>・</b> 時間制限なし</span></section>
+    <div class="game-layout">
+      <section class="game-card" aria-label="鬼ごっこゲーム">
+        <div class="game-toolbar"><span><span class="live-dot"></span> こもれびの広場</span><div class="stats"><span>あそんだ時間 <strong id="timer">0:00</strong></span><button id="pause" class="icon-button" disabled aria-label="ひとやすみ">Ⅱ</button></div></div>
+        <div class="stage" id="stage">
+          <canvas id="game" width="960" height="600" tabindex="0" aria-label="森の鬼ごっこ。矢印キーか WASD でタヌキさんを動かし、スペースキーでダッシュ。お猿さんに触れると勝ちです。">このゲームには Canvas 対応のブラウザーが必要です。</canvas>
+          <div class="overlay" id="overlay"><div class="welcome"><span class="small-label" id="overlay-label">きょうも、いっしょにあそぼう。</span><h2 id="overlay-title">お猿さんを<br>つかまえよう！</h2><p id="overlay-text">あなたはタヌキさん。<br>森をかけまわって、やさしくタッチ！</p><button class="primary" id="start">あそびにいく <span>→</span></button><p class="start-note" id="start-note">じゅんびができたら、はじめよう</p></div></div>
+          <div class="game-message" id="message" role="status" aria-live="polite"></div>
+        </div>
+        <div class="controls"><div class="dpad" aria-label="移動ボタン"><button data-direction="up" class="up" aria-label="上へ">↑</button><button data-direction="left" class="left" aria-label="左へ">←</button><span aria-hidden="true">✿</span><button data-direction="right" class="right" aria-label="右へ">→</button><button data-direction="down" class="down" aria-label="下へ">↓</button></div><div class="control-hint"><strong>タヌキさんを うごかそう</strong><span><kbd>↑</kbd><kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd> または <kbd>W A S D</kbd></span></div><button class="dash" id="dash" disabled><span>✧ ダッシュ</span><small id="dash-label">スペースキーでも OK</small></button></div>
+      </section>
+      <aside>
+        <section class="note-card"><p class="eyebrow">HOW TO PLAY</p><h2>森の あそびかた</h2><div class="instruction"><span class="step">1</span><p><strong>タヌキさんを うごかす</strong><span>矢印キーか画面のボタンで<br>お猿さんをおいかけよう。</span></p></div><div class="instruction"><span class="step">2</span><p><strong>ダッシュで ぐんっ！</strong><span>あと少しのときにダッシュ。<br>少し休むと、また使えるよ。</span></p></div><div class="instruction"><span class="step">3</span><p><strong>タッチできたら 勝ち！</strong><span>つかまえたら、ふたりで<br>なかよくハイタッチ。</span></p></div><div class="gentle-note">❀ あせらなくても、だいじょうぶ。<br>じぶんのペースで あそんでね。</div></section>
+        <section class="settings-card"><label for="difficulty">あそぶ はやさ</label><select id="difficulty"><option value="easy">のんびり</option><option value="normal" selected>ふつう</option><option value="fast">げんきいっぱい</option></select><p>つぎに始めるときから変わるよ</p><button id="restart" class="text-button">↻ はじめから あそぶ</button></section>
+      </aside>
+    </div>
+    <footer><span>おいかけるのも、つかまるのも、なかよしのしるし。</span><span class="footer-mark">MADE FOR LITTLE SMILES <span>❧</span></span></footer>
+  </main>
+</body>
+</html>
